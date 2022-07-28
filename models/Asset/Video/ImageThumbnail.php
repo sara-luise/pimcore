@@ -181,6 +181,11 @@ final class ImageThumbnail
                 'generated' => $generated,
             ]);
             \Pimcore::getEventDispatcher()->dispatch($event, AssetEvents::VIDEO_IMAGE_THUMBNAIL);
+        }else{
+            $this->pathReference = [
+                'type' => 'error',
+                'src' => '/bundles/pimcoreadmin/img/filetype-not-supported.svg',
+            ];
         }
     }
 
